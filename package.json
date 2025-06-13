@@ -1,5 +1,5 @@
 {
-  "name": "furnace build radiator",
+  "name": "furnace",
   "version": "1.0.0",
   "type": "module",
   "description": "Monitor all your github actions",
