@@ -1,5 +1,5 @@
 #!/usr/bin/env ./commands.sh
-import { $, file } from 'bun';
+import { $ } from 'bun';
 
 process.env.FORCE_COLOR = '1';
 
