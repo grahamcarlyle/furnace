@@ -1,0 +1,10 @@
+.idea
+!.idea/prettier.xml
+
+
+node_modules/
+tools/
+
+**/dist
+
+
