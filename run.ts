@@ -1,7 +1,7 @@
 #!/usr/bin/env ./commands.sh
-import { $ } from 'bun';
+import { $ } from "bun";
 
-process.env.FORCE_COLOR = '1';
+process.env.FORCE_COLOR = "1";
 
 export async function clean() {
   await $`rm -rf dist`;
@@ -32,14 +32,14 @@ export async function build() {
   await install();
   await check();
   await compile();
-  await test('--silent');
+  await test("--silent");
 }
 
 export async function script(script_name: string) {
   await $`bun run scripts/${script_name}`;
 }
 
-const command = process.argv[2] || 'build';
+const command = process.argv[2] || "build";
 const args = process.argv.slice(3);
 
 try {
@@ -49,7 +49,7 @@ try {
     const { exitCode } = await $`${command} ${args}`.nothrow();
     process.exit(exitCode);
   } else {
-    console.error('Command failed:', command, ...args, e.message);
+    console.error("Command failed:", command, ...args, e.message);
     process.exit(1);
   }
 }
