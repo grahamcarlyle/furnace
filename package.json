@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Monitor all your github actions",
   "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.24"
   },
   "devDependencies": {
     "@dotenvx/dotenvx": "^1.37.0",
