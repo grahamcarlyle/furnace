@@ -18,17 +18,16 @@ Furnace is a GitHub Actions build radiator - a frontend-only web application tha
 - `./run format` - Format code with Prettier
 
 ### Development
-- `bun scripts/watch.mjs` - Watch mode with hot reload using nodemon
-- `./scripts/start-dev.sh` - Start development server
+- `./run serve_dev` - Start development server with hot reload and static file serving on http://localhost:3000
 
 ## Architecture
 
 ### Build Pipeline
 The project uses a custom build system built with Bun and esbuild:
-- **Entry Point**: `src/index.ts` (currently empty)
-- **Build Config**: `scripts/build-config.mjs` - esbuild configuration for Node.js CJS output
-- **Build Script**: `scripts/build.mjs` - executes esbuild with the config
-- **Watch Mode**: `scripts/watch.mjs` - development mode with esbuild context and nodemon
+- **Entry Point**: `src/index.tsx` - React application entry point
+- **Build Config**: `scripts/build-config.mjs` - esbuild configuration for browser builds
+- **Build Script**: `scripts/build.mjs` - executes esbuild with the config for production
+- **Development Server**: `scripts/serve-dev.mjs` - development mode with esbuild watch and static file serving
 
 ### Tool Management
 - Uses `mise` for tool version management (Node.js, Bun, Java)

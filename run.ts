@@ -35,6 +35,10 @@ export async function build() {
   await test("--silent");
 }
 
+export async function serve_dev() {
+  await $`bun run scripts/serve-dev.mjs`;
+}
+
 export async function script(script_name: string) {
   await $`bun run scripts/${script_name}`;
 }
