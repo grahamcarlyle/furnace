@@ -1,4 +1,4 @@
 import * as esbuild from 'esbuild';
-import { serverBuildConfig } from './build-config.mjs';
+import { webBuildConfig } from './build-config.mjs';
 
-await esbuild.build(serverBuildConfig);
+await esbuild.build(webBuildConfig);

@@ -1,5 +1,28 @@
+export const webBuildConfig = {
+  entryPoints: ['src/index.tsx'],
+  bundle: true,
+  minify: true,
+  sourcemap: true,
+  outfile: 'dist/index.js',
+  platform: 'browser',
+  format: 'iife',
+  external: [],
+  loader: {
+    '.tsx': 'tsx',
+    '.ts': 'ts',
+    '.jsx': 'jsx',
+    '.js': 'js',
+  },
+  jsx: 'automatic',
+  logLevel: 'info',
+  define: {
+    'process.env.NODE_ENV': '"production"',
+  },
+};
+
+// Legacy server config (keeping for compatibility)
 export const serverBuildConfig = {
-  entryPoints: ['src/index.ts'],
+  entryPoints: ['src/index.tsx'],
   bundle: true,
   minify: true,
   sourcemap: true,
@@ -9,6 +32,9 @@ export const serverBuildConfig = {
   external: [],
   loader: {
     '.node': 'file',
+    '.tsx': 'tsx',
+    '.ts': 'ts',
   },
+  jsx: 'automatic',
   logLevel: 'info',
 };

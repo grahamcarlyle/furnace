@@ -1,11 +1,15 @@
 import * as esbuild from 'esbuild';
 import nodemon from 'nodemon';
-import { serverBuildConfig } from './build-config.mjs';
+import { webBuildConfig } from './build-config.mjs';
 
 async function watch(config) {
   const { promise, resolve } = Promise.withResolvers();
   const context = await esbuild.context({
     ...config,
+    minify: false, // Disable minification in development
+    define: {
+      'process.env.NODE_ENV': '"development"',
+    },
     plugins: [
       {
         name: 'build-complete',
@@ -18,14 +22,9 @@ async function watch(config) {
   await promise;
 }
 
-await watch(serverBuildConfig);
+await watch(webBuildConfig);
 
-nodemon({
-  watch: ['dist/index.cjs'],
-  exec: 'dotenvx run -f .env -- node --enable-source-maps dist/index.cjs',
-  delay: 1000,
-  env: {
-    NODE_ENV: 'development',
-    ENVIRONMENT: 'development',
-  },
-});
+// For a web app, we need a static file server instead of nodemon
+console.log('React app built successfully!');
+console.log('Open public/index.html in your browser to view the app');
+console.log('Or serve the public directory with a static file server');
