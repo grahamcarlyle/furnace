@@ -29,7 +29,7 @@ export async function format() {
 
 export async function dist() {
   await compile();
-  await $`cp -r public/* dist/`;
+  await $`cp public/index.html dist/`;
 }
 
 export async function build() {
