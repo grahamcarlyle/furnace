@@ -5,6 +5,7 @@ process.env.FORCE_COLOR = "1";
 
 export async function clean() {
   await $`rm -rf dist`;
+  await $`rm -rf public/gen`;
 }
 
 export async function install() {
