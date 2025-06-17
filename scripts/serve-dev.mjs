@@ -7,7 +7,7 @@ console.log('🔥 Furnace Development Server Starting...');
 // Development build configuration
 const devConfig = {
   ...webBuildConfig,
-  outfile: 'public/dist/index.js', // Output to public directory
+  outfile: 'public/gen/index.js', // Output to public directory
   minify: false,
   define: {
     'process.env.NODE_ENV': '"development"',

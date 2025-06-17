@@ -3,7 +3,7 @@ export const webBuildConfig = {
   bundle: true,
   minify: true,
   sourcemap: true,
-  outfile: 'dist/index.js',
+  outfile: 'dist/gen/index.js',
   platform: 'browser',
   format: 'iife',
   external: [],

@@ -27,16 +27,25 @@ export async function format() {
   await $`bun run prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}`;
 }
 
+export async function dist() {
+  await compile();
+  await $`cp -r public/* dist/`;
+}
+
 export async function build() {
   await clean();
   await install();
   await check();
-  await compile();
+  await dist()
   await test("--silent");
 }
 
 export async function serve_dev() {
   await $`bun run scripts/serve-dev.mjs`;
+}
+
+export async function serve_dist() {
+  await $`bun x serve dist -l 3000`;
 }
 
 export async function script(script_name: string) {

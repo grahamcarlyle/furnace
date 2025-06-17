@@ -15,7 +15,11 @@ function http() {
 }
 
 if [[ ! -f "$MISE_INSTALL_PATH" ]]; then
-  http https://mise.run | sh
+  if [[ $(command -v mise) ]]; then
+    echo "Using mise from $(which mise)"
+  else
+    http https://mise.run | sh
+  fi
 fi
 mise -q install
 eval "$(mise -q env)"
