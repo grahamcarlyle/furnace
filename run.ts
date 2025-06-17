@@ -46,7 +46,7 @@ export async function serve_dev() {
 }
 
 export async function serve_dist() {
-  await $`bun x serve dist -l 3000`;
+  await $`bun x serve dist -l 3000 --single`;
 }
 
 export async function script(script_name: string) {

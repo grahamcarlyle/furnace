@@ -43,7 +43,7 @@ async function startWatcher() {
 
 // Start static file server
 function startServer() {
-  const server = spawn('bun', ['x', 'serve', 'public', '-l', '3000'], {
+  const server = spawn('bun', ['x', 'serve', 'public', '-l', '3000', '--single'], {
     stdio: 'inherit',
     shell: true,
     env: {
