@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Furnace is a GitHub Actions build radiator - a frontend-only web application that creates a visual dashboard showing GitHub repository build statuses. It runs entirely in the browser with no backend required, using React to display real-time build status dashboards.
 
+**Deployment**: The application is deployed to GitHub Pages at https://[username].github.io/furnace/
+
 ## Development Commands
 
 ### Build System
@@ -45,6 +47,10 @@ The project uses a custom build system built with Bun and esbuild:
 - Uses `@tsconfig/node22` base configuration
 - Type checking via `tsc --noEmit` (no explicit tsconfig.json found)
 - SWC handles TypeScript compilation in Jest
+
+### React Router Configuration
+- Uses React Router with `basename="/furnace"` for GitHub Pages subdirectory deployment
+- Routes are configured in `src/App.tsx` with the basename to handle the `/furnace/` path
 
 ## Key Files
 - `run.ts` - Main build orchestration script

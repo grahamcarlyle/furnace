@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/furnace">
       <div className="app">
         <header className="app-header">
           <h1>Furnace - GitHub Actions Monitor</h1>
